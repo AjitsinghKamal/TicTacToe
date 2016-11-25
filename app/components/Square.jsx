@@ -4,10 +4,16 @@ import React from 'react';
 / render a single Square
 **/
 class Square extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      value:null
+    };
+  }
   render(){
     return (
-      <button className="square">
-        { this.props.value }
+      <button className="square" onClick={()=>this.props.onClick()}>
+        {this.state.value}
       </button>
     );
   }

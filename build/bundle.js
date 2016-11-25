@@ -21822,6 +21822,13 @@
 	  return Game;
 	}(_react2.default.Component);
 
+	/** Note to self
+	/ if exported with default
+	/ can import without {}
+	/ otherwise import with {componentname}
+	**/
+
+
 	exports.default = Game;
 
 /***/ },
@@ -21962,8 +21969,10 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "button",
-	        { className: "square" },
-	        this.props.value
+	        { className: "square", onClick: function onClick() {
+	            return alert("x");
+	          } },
+	        " "
 	      );
 	    }
 	  }]);
