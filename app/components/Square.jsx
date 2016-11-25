@@ -3,20 +3,13 @@ import React from 'react';
 / This is the lowest level component
 / render a single Square
 **/
-class Square extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      value:null
-    };
-  }
-  render(){
+function Square(props){
     return (
-      <button className="square" onClick={()=>this.props.onClick()}>
-        {this.state.value}
+      <button className="square" onClick={()=>props.onClick()}>
+        {props.value}
       </button>
     );
-  }
+
 }
 
 export default Square;

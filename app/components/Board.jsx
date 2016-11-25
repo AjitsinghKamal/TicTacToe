@@ -10,7 +10,8 @@ class Board extends React.Component{
   constructor(){
     super();
     this.state={
-      squares:Array(9).fill(null)
+      squares:Array(9).fill(null),
+      xIsNext:true
     };
   }
 
@@ -22,11 +23,15 @@ class Board extends React.Component{
   _handleClick(i){
     //keep immutability
     const squares=this.state.squares.slice();
-    squares[i]='X';
-    this.setState({squares:squares});
+    squares[i]= (this.state.xIsNext)?'X':'O';
+    this.setState({
+      squares:squares,
+      xIsNext:  !this.state.xIsNext
+    });
   }
   render(){
-    const status='Next Player: X';
+    const status='Next Player:';
+    let prompt=(this.state.xIsNext)?'X':'O';
     /**
     // Note to self:
     // a react component must return *single element
@@ -34,7 +39,7 @@ class Board extends React.Component{
     **/
     return(
       <div>
-        <div className="status">{status}</div>
+        <div className="status">{status+prompt}</div>
 
         <div className="board-row">
           {this._renderSquare(0)}
@@ -43,15 +48,15 @@ class Board extends React.Component{
         </div>
 
         <div className="board-row">
-          {this._renderSquare(0)}
-          {this._renderSquare(1)}
-          {this._renderSquare(2)}
+          {this._renderSquare(3)}
+          {this._renderSquare(4)}
+          {this._renderSquare(5)}
         </div>
 
         <div className="board-row">
-          {this._renderSquare(0)}
-          {this._renderSquare(1)}
-          {this._renderSquare(2)}
+          {this._renderSquare(6)}
+          {this._renderSquare(7)}
+          {this._renderSquare(8)}
         </div>
 
       </div>
