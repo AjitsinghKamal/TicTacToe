@@ -1,0 +1,121 @@
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding:0;
+}
+
+body{
+  background-color:#E0D3DE;
+}
+
+#app-container{
+  width:100vw;
+  height:100vh;
+}
+
+.game{
+  position:relative;
+  height:100%;
+  width:95%;
+  margin: 0 auto;
+  padding:2vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-turn{
+  margin-right: 5vw;
+  height:25vh;
+  flex-grow: 0;
+  text-align: center;
+
+}
+
+.turn{
+  font-size: 5vw;
+  color:#5FB49C;
+
+}
+.turn+span{
+  margin-top: 2em;
+  font-size: 1em;
+  color:#444545;
+}
+
+span>i.fa-refresh{
+  margin-top:1em;
+  height:2em;
+  width:2em;
+  cursor: pointer;
+}
+
+.game-info{
+  height:52vh;
+  text-align: left;
+  font-size:1.3vw;
+  color:#444545;
+  flex-grow: 0;
+
+}
+
+ul{
+  list-style:none;
+}
+
+li{
+  margin:10px 0;
+}
+
+.fa{
+  margin:0 10px;
+}
+
+.game-board{
+  position:relative;
+  width:48vh;
+  height:48vh;
+  display: flex;
+  margin:0 4vw 0 4vw;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.board-row{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.square{
+  width:15vh;
+  height:15vh;
+  border:4px solid #64908A;
+  background:#E8CAA4 ;
+  margin:4px;
+  cursor: pointer;
+
+}
+
+.font{
+  font-size: 8vh;
+  font-weight: bold;
+  color:#444545;
+}
+
+button:focus{
+  outline: 0;
+}
+
+a{
+  color:inherit;
+  text-decoration: none;
+}
